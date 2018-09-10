@@ -18,7 +18,14 @@ export class AppComponent {
     this.rForm = fb.group ({
       'name' : [null, Validators.required],
       'description' : [null, Validators.compose([Validators.required, Validators.minLength(30), Validators.maxLength(500)])],
+      'validate' : ''
     });
 
+  }
+
+  addPot(post) {
+    this.description = post.description;
+    this.name = post.name;
+    
   }
 }
